@@ -1,20 +1,25 @@
 <div class="title">
     
+    <button (click)="getAllTasks ()">Get All Tasks!</button>
+    <div *ngIf="tasks">
+        <h2 class="title">All the tasks:</h2>
+        <ul  >
+            <li *ngFor = "let task of tasks" >
+                {{task.title}} <button (click)="getOneTask(task._id)">Show</button>
+            </li>
+        </ul>   
+        <div >
+            
+
+        <div  class="title" *ngIf="singletask != null">
+            <h2 >Selected task:</h2>
+                <h5>{{singletask.title}}</h5>
+                <p>{{singletask.description}}</p>
+        </div> 
+        </div>
+        
+    </div>
     
-    <h2 class="title">All the tasks:</h2>
-    <ul >
-        <li *ngFor = "let task of tasks" >
-            {{task.title}} - {{task.description}}
-        </li>
-    </ul>   
-
-    <h2 class="title">Third task:</h2>
-
-    <ul *ngIf="tasks[2]">
-        <li >
-            {{tasks[2].title}} - {{tasks[2].description}}
-        </li>
-    </ul>  
 
 </div>
 
