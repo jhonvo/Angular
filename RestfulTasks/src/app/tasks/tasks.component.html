@@ -1,24 +1,47 @@
-<div class="title">
+<div class="taskscontent" >
     
-    <button (click)="getAllTasks ()">Get All Tasks!</button>
-    <div *ngIf="tasks">
-        <h2 class="title">All the tasks:</h2>
-        <ul  >
-            <li *ngFor = "let task of tasks" >
-                {{task.title}} <button (click)="getOneTask(task._id)">Show</button>
-            </li>
-        </ul>   
-        <div >
-            
 
-        <div  class="title" *ngIf="singletask != null">
-            <h2 >Selected task:</h2>
-                <h5>{{singletask.title}}</h5>
-                <p>{{singletask.description}}</p>
-        </div> 
+    <div class="title block">
+        <button (click)="getAllTasks ()">Get All Tasks!</button>
+        <div *ngIf="tasks">
+            <h2 class="title">All the tasks:</h2>
+            <div class="task" *ngFor = "let task of tasks">
+                
+                    <h5>{{task.title}} </h5>
+                    <p>{{task.description}}</p>
+                    <p><button (click)="getOneTask(task._id)">Edit</button> <button (click)="removeOneTask(task._id)">Delete</button></p>
+                
+            </div>   
         </div>
-        
     </div>
+
+    <div class="block">
+        <form (submit)="createTask(newTask)">
+            <h2>Create task</h2>
+            <p>
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" [(ngModel)]="newTask.title">
+            </p>
+            <p>
+                <label for="description">Description</label>
+                <input type="text" name="description" id="description" [(ngModel)]="newTask.description">
+            </p>
+            <button type="submit">Save!</button>
+        </form>
+        <form (submit)="updateOneTask(updateTask._id, updateTask)">
+            <h2>Update task</h2>
+            <p>
+                <label for="updatetitle">Title</label>
+                <input type="text" name="updatetitle" id="updatetitle" [(ngModel)]="updateTask.title">
+            </p>
+            <p>
+                <label for="updatedescription">Description</label>
+                <input type="text" name="updatedescription" id="updatedescription" [(ngModel)]="updateTask.description">
+            </p>
+            <button type="submit">Update Form!</button>
+        </form>
+    </div>
+    
     
 
 </div>
