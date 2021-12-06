@@ -1,0 +1,22 @@
+.title{
+    text-align: center;   
+    margin-bottom: 30px;
+    
+}
+
+.comp{
+    border: 1px solid green;
+}
+
+ul{
+    width: 550px;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+li{
+    padding-bottom: 10px;
+}
+
+
