@@ -1,0 +1,14 @@
+<div>
+    <p> <a [routerLink] = "['/']">Home</a></p>
+    {{errorMessage}}
+    <div *ngIf="current != null">
+    
+    <p>Edith this author:</p>
+    <form (submit)="updateAuthor()">
+        <p><label for="name">Name:</label></p>
+        <p><input type="text" name="name" id="name" [(ngModel)]="current.name"></p>
+        <p><button type="submit">Update!</button> <button [routerLink] = "['/']">Cancel!</button></p>
+        
+    </form>
+</div>
+</div>
