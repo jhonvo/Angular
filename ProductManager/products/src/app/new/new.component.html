@@ -1,0 +1,19 @@
+<div class="block">
+    <form (submit)="createProduct()">
+        <p>
+            <label for="title">Title:</label>
+            <input type="text" name="title" id="title" [(ngModel)]="newProduct.title">
+        </p>
+        <p>
+            <label for="price">Price:</label>
+            <input type="number" name="price" id="price" [(ngModel)]="newProduct.price">
+        </p>
+        <p>
+            <label for="imageURL">Image URL:</label>
+            <input type="text" name="imageURL" id="imageURL" [(ngModel)]="newProduct.imageURL">
+        </p>
+
+        <button type="submit">Create!</button>
+    </form>
+    {{errorMessage}}
+</div>
