@@ -1,0 +1,9 @@
+.product{
+    border: 2px solid purple;
+    padding: 15px;
+}
+
+.productchild{
+    border: 2px solid rgb(224, 58, 183);
+    padding: 15px;
+}
