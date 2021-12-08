@@ -1,0 +1,21 @@
+<div class="body">
+  <h1>Anonymuos Notes</h1>
+  
+    <form (submit) = "saveNote()">
+      <label for="note" style="margin-right: 15px;">Note:</label>
+      <input type="text" style="width: 60%; margin-right: 15px;" name="note" id="note" [(ngModel)]="note.note">
+      <button type="submit">Submit!</button>
+      <p>{{ErrorMessage}}</p>
+    </form>
+  
+  
+    <div class="notes">
+
+    <div *ngFor = "let line of allNotes" class="note">
+      <p style="text-align: right;">{{line.createdAt | date:'medium'}}</p>
+      <p>{{line.note}}</p>
+    </div>
+      
+    </div>
+  
+</div>
